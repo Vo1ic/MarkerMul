@@ -30,6 +30,13 @@ Tested on multiplying two random **10,000-bit** numbers and extracting the exact
 
 *Result: MarkerMul is **1775.66x faster** for targeted bit extraction, with near-zero memory footprint.*
 
+## 🚀 Benchmark: Asymptotic Dominance
+Tested in C++ generating random arrays up to 30,000 bits. The goal was to extract the exact middle bit of the product. 
+
+![Benchmark Graph](benchmark_plot.png)
+
+As seen in the graph, the standard $O(N^2)$ multiplication method grows exponentially in time, while **MarkerMul** remains nearly flat, demonstrating its $O(K \cdot \log_2 L)$ efficiency. At 10,000 bits, MarkerMul is over **1700x faster**, and the gap widens massively as the bit count increases.
+
 ## 🛠️ Practical Use Cases
 1. **Hardware Parallelization (GPU/FPGA):** Since the carry dependency is broken, you can assign different cores to calculate different chunks of a massive multiplication simultaneously without waiting for neighboring cores.
 2. **Cryptography & Reverse Engineering:** Instantly filter out false keys or brute-force candidates by matching known bits of a product without performing full multiplications.
