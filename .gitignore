@@ -1,0 +1,23 @@
+# Compiled binaries
+bench_mul
+bench_sn
+bench_sniper
+bench_vec
+gpu_benchmark
+test_markermul
+test_mm
+demo_hensel
+
+# Object files and libraries
+*.o
+*.obj
+*.a
+*.lib
+*.so
+*.dll
+
+# IDE and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
